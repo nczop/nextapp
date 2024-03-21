@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import { ActiveLink } from "@/ui/atoms/ActiveLink";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Navigation } from "@/ui/molecules/Navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,27 +20,14 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<nav>
-					<ul className="mt-5 flex justify-center space-x-4">
-						<li>
-							<ActiveLink href="/">Homepage</ActiveLink>
-						</li>
-						<li>
-							<ActiveLink href="/products">Products</ActiveLink>
-						</li>
-						<li>
-							<ActiveLink href="/status">Status</ActiveLink>
-						</li>
-						<li>
-							<ActiveLink href="/privacy-policy">Privacy policy</ActiveLink>
-						</li>
-					</ul>
-				</nav>
-				<section className="mx-auto max-w-md p-12 sm:max-w-2xl sm:py-16 md:max-w-4xl lg:max-w-7xl">
-					{children}
-				</section>
-				<footer>footer test</footer>
-				<Analytics />
+				<ThemeProvider attribute="class" defaultTheme="system">
+					<Navigation />
+					<section className="mx-auto max-w-md p-12 sm:max-w-2xl sm:py-16 md:max-w-4xl lg:max-w-7xl">
+						{children}
+					</section>
+					<footer>footer test</footer>
+					<Analytics />
+				</ThemeProvider>
 			</body>
 		</html>
 	);
