@@ -5,11 +5,11 @@ import { usePathname } from "next/navigation";
 import { type ReactNode } from "react";
 import { type Route } from "next";
 
-export const ActiveLink = ({
+export const ActiveLink = <T extends string>({
 	href,
 	children,
 }: {
-	href: Route;
+	href: Route<T> | URL;
 	children: ReactNode;
 }) => {
 	const pathname = usePathname();
