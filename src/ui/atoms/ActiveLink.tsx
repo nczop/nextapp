@@ -16,7 +16,7 @@ export const ActiveLink = <T extends string>({
 	const isActive = pathname === href;
 	return (
 		<Link
-			href={href}
+			href={href as Route}
 			className={clsx(`text-gray-600 hover:text-gray-900`, {
 				underline: isActive,
 			})}
