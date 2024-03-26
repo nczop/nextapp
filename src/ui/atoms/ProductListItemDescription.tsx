@@ -1,12 +1,11 @@
 type ProductListItemDescriptionProps = {
-	product: {
-		name: string;
-		price: number;
-	};
+	name: string;
+	price: number;
 };
 
 export const ProductListItemDescription = ({
-	product: { name, price },
+	name,
+	price,
 }: ProductListItemDescriptionProps) => {
 	return (
 		<>
