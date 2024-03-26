@@ -79,7 +79,7 @@
 			"error",
 			{
 				"name": "next/router",
-				"message": "Please use next/navigation instead."
+				"message": "Please use next/navigation instead!."
 			}
 		],
 		"react/no-unescaped-entities": 0
