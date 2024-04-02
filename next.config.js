@@ -19,6 +19,11 @@ const nextConfig = {
 		typedRoutes: true,
 		mdxRs: true,
 	},
+	logging: {
+		fetches: {
+			fullUrl: true,
+		},
+	},
 };
 
 module.exports = nextConfig;
